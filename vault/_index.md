@@ -125,6 +125,7 @@ Bounded efforts with defined scope, timeline, and outcomes.
 
 **Active/Recent Projects**:
 - [[projects/documentation-system-2026-01-14|Documentation System]] - Self-managing Obsidian vault with curator
+- [[projects/docs-migration-from-chaos-to-clarity-2026-01-14|From Chaos to Clarity]] - Documentation migration success story
 - [[projects/documentation-migration-progress-2026-01-14|Documentation Migration Progress]] - Phase 1 & 2 complete (87 files)
 - [[projects/langflow-integration-2026-01-13|Langflow Integration]] - 12 workflows with MCP integration
 - [[projects/langflow-workflows-2026-01-13|Langflow Workflows]] - 10 production-ready workflow definitions
@@ -165,11 +166,11 @@ Common tags used across the vault:
 
 ## Statistics
 
-- **Total Documents**: 87 files
+- **Total Documents**: 88 files
 - **Architecture**: 14 files (3 ADRs + 11 core docs)
 - **Operations**: 33 files (4 runbooks, 5 troubleshooting, 10 lifecycle, 5 security, 6 reference, 3 status)
 - **Knowledge**: 27 files (3 getting started, 6 frameworks, 5 system design, 5 integrations, 3 troubleshooting, 5 best practices)
-- **Projects**: 13 files (4 active, 5 observability phases, 4 roadmaps)
+- **Projects**: 14 files (5 active, 5 observability phases, 4 roadmaps)
 
 ---
 
