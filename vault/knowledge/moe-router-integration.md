@@ -1,3 +1,14 @@
+---
+title: "MoE Router Integration Guide"
+type: knowledge
+created: "2025-11-27"
+tags:
+  - moe
+  - routing
+  - integration
+  - guide
+---
+
 # MoE Router Integration Guide
 
 Integration guide for adding routing performance tracking to the Cortex MoE router system.

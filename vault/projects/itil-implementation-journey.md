@@ -1,3 +1,17 @@
+---
+title: "ITIL Implementation Journey"
+type: project
+status: completed
+created: "2025-12-20"
+completed: "2025-12-23"
+tags:
+  - itil
+  - itsm
+  - kubernetes
+  - implementation
+  - journey
+---
+
 # The ITIL/ITSM Implementation Journey: When AI Takes Shortcuts and Infrastructure Fights Back
 
 *A technical deep-dive into deploying enterprise ITIL 4 services on Kubernetes, navigating storage failures, network complexities, and the hidden costs of AI "easy solutions"*

@@ -1,3 +1,15 @@
+---
+title: "Event Replay Guide"
+type: knowledge
+created: "2025-12-01"
+status: implemented
+tags:
+  - events
+  - replay
+  - debugging
+  - guide
+---
+
 # Event Replay Guide
 
 **Status**: ✅ Implemented

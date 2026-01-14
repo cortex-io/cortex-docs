@@ -1,3 +1,14 @@
+---
+title: "Self-Healing System Deployment"
+type: architecture
+created: "2025-11-27"
+tags:
+  - self-healing
+  - deployment
+  - k3s
+  - architecture
+---
+
 # Self-Healing System Deployment Guide
 
 ## Overview

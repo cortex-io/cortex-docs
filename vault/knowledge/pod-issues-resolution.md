@@ -1,3 +1,15 @@
+---
+title: "Pod Issues Resolution"
+type: knowledge
+created: "2025-12-25"
+status: resolved
+tags:
+  - kubernetes
+  - troubleshooting
+  - pods
+  - resolution
+---
+
 # Kubernetes Pod Issues - Complete Resolution Summary
 
 **Date:** 2025-12-25

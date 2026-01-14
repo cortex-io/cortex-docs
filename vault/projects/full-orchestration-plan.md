@@ -1,3 +1,15 @@
+---
+title: "Full Orchestration Plan"
+type: project
+status: planning
+created: "2025-12-21"
+tags:
+  - orchestration
+  - execution-plan
+  - coordination
+  - roadmap
+---
+
 # Cortex Full Orchestration - Execution Plans
 
 **Created:** 2025-12-21

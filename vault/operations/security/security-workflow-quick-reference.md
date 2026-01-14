@@ -1,3 +1,14 @@
+---
+title: "Security Workflow Quick Reference"
+type: operations
+created: "2025-11-27"
+tags:
+  - security
+  - workflows
+  - reference
+  - quick-reference
+---
+
 # Security Workflow Quick Reference
 
 ## Files Created

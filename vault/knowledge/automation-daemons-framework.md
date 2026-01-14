@@ -1,3 +1,14 @@
+---
+title: "Automation Daemons Framework"
+type: knowledge
+created: "2025-11-27"
+tags:
+  - automation
+  - daemons
+  - self-healing
+  - framework
+---
+
 # Cortex Automation Daemons
 
 ## Overview

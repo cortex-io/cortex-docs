@@ -1,3 +1,14 @@
+---
+title: "A/B Testing Framework"
+type: knowledge
+created: "2025-11-27"
+tags:
+  - testing
+  - ab-testing
+  - experimentation
+  - framework
+---
+
 # A/B Testing Framework
 
 **Version:** 1.0

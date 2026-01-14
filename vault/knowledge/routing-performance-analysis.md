@@ -1,3 +1,14 @@
+---
+title: "Routing Performance Analysis"
+type: knowledge
+created: "2025-11-27"
+tags:
+  - routing
+  - performance
+  - optimization
+  - analysis
+---
+
 # Routing Performance Tracking
 
 Comprehensive performance tracking and optimization for the 5-layer hybrid routing cascade.

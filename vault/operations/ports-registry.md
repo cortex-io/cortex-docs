@@ -1,3 +1,14 @@
+---
+title: "Ports Registry"
+type: operations
+created: "2025-11-27"
+tags:
+  - ports
+  - registry
+  - networking
+  - reference
+---
+
 # Cortex Ports Registry
 
 **CRITICAL**: This file must be manually updated whenever Cortex creates any service that uses a port.

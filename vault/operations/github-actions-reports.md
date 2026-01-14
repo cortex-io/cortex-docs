@@ -1,3 +1,14 @@
+---
+title: "GitHub Actions Reports"
+type: operations
+created: "2025-11-27"
+tags:
+  - github-actions
+  - automation
+  - reports
+  - ci-cd
+---
+
 # GitHub Actions Automated Reports
 
 This document describes the automated reporting workflows configured for Cortex.

@@ -1,3 +1,15 @@
+---
+title: "Strategic Roadmap"
+type: project
+status: planning
+created: "2025-12-01"
+tags:
+  - roadmap
+  - strategy
+  - planning
+  - phases
+---
+
 # Cortex Improvement Roadmap - Visual Overview
 
 ## 4-Phase Strategy Timeline (16 Weeks)

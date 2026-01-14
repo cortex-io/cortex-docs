@@ -1,3 +1,14 @@
+---
+title: "Webhook Integration Guide"
+type: knowledge
+created: "2025-11-27"
+tags:
+  - webhooks
+  - integration
+  - api
+  - guide
+---
+
 # Webhook Integration Guide
 
 ## Overview

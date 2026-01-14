@@ -1,3 +1,14 @@
+---
+title: "Daemon Monitoring Guide"
+type: operations
+created: "2025-11-27"
+tags:
+  - daemons
+  - monitoring
+  - health-check
+  - guide
+---
+
 # Daemon Monitoring Architecture
 
 This document describes the health monitoring system for cortex daemons and expected behavior patterns.

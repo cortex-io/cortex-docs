@@ -1,3 +1,14 @@
+---
+title: "Preflight Playbook"
+type: operations
+created: "2025-11-27"
+tags:
+  - preflight
+  - checklist
+  - health-check
+  - runbook
+---
+
 # Cortex Stack Pre-Flight Playbook
 
 ## Overview

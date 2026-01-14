@@ -1,3 +1,14 @@
+---
+title: "API Versioning Strategy"
+type: architecture
+created: "2025-11-27"
+tags:
+  - api
+  - versioning
+  - architecture
+  - backward-compatibility
+---
+
 # API Versioning Strategy
 
 ## Overview

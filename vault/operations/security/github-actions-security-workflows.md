@@ -1,3 +1,15 @@
+---
+title: "GitHub Actions Security Workflows"
+type: operations
+created: "2025-11-27"
+tags:
+  - security
+  - github-actions
+  - scanning
+  - cve
+  - automation
+---
+
 # GitHub Actions Security Scanning Workflows
 
 Automated CVE scanning infrastructure deployed across all ry-ops repositories.

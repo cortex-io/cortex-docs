@@ -1,3 +1,16 @@
+---
+title: "Observability Pipeline Phase 3"
+type: project
+status: completed
+created: "2025-12-04"
+completed: "2025-12-04"
+tags:
+  - observability
+  - pipeline
+  - phase-3
+  - destinations
+---
+
 # Observability Pipeline - Weeks 5-6 Implementation Summary
 
 **Completion Date**: December 4, 2025

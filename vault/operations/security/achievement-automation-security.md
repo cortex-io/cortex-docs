@@ -1,3 +1,14 @@
+---
+title: "Achievement Automation Security"
+type: operations
+created: "2025-11-27"
+tags:
+  - security
+  - automation
+  - tokens
+  - best-practices
+---
+
 # Achievement Automation Security Best Practices
 
 ## Token Management

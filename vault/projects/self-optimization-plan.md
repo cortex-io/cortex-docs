@@ -1,3 +1,15 @@
+---
+title: "Self-Optimization Plan"
+type: project
+status: planning
+created: "2025-12-05"
+tags:
+  - self-optimization
+  - execution-plan
+  - parallel
+  - meta-goal
+---
+
 # Cortex Self-Optimization: Parallel Execution Plan
 
 **Date:** 2025-12-05

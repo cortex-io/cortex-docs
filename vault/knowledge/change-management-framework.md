@@ -1,3 +1,14 @@
+---
+title: "Change Management Framework"
+type: knowledge
+created: "2025-12-30"
+tags:
+  - change-management
+  - itil4
+  - framework
+  - governance
+---
+
 # Cortex IT Change Management Framework
 
 ## Executive Summary

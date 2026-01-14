@@ -1,3 +1,14 @@
+---
+title: "Troubleshooting Common Issues"
+type: operations
+created: "2025-11-27"
+tags:
+  - troubleshooting
+  - guide
+  - debugging
+  - reference
+---
+
 # Troubleshooting Guide
 
 ## Common Issues and Solutions

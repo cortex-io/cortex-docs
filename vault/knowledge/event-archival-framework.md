@@ -1,3 +1,14 @@
+---
+title: "Event Archival Framework"
+type: knowledge
+created: "2025-11-27"
+tags:
+  - events
+  - archival
+  - automation
+  - framework
+---
+
 # Event Archival and Compression
 
 Automated archival system for Cortex event management with compression, rotation, and cleanup capabilities.

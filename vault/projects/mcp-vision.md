@@ -1,3 +1,15 @@
+---
+title: "MCP Vision"
+type: project
+status: vision
+created: "2025-12-21"
+tags:
+  - mcp
+  - vision
+  - architecture
+  - api
+---
+
 # Cortex MCP Server - The Ultimate Construction Company Interface
 
 ## Vision

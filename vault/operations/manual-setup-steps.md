@@ -1,3 +1,14 @@
+---
+title: "Manual Setup Steps"
+type: operations
+created: "2025-11-27"
+tags:
+  - setup
+  - manual
+  - mcp
+  - configuration
+---
+
 # Manual Steps Required for MCP Infrastructure
 
 This document outlines manual steps that must be completed by the user to fully operationalize the MCP infrastructure.

@@ -1,3 +1,15 @@
+---
+title: "Environment Separation"
+type: operations
+created: "2025-11-27"
+tags:
+  - environments
+  - separation
+  - dev
+  - staging
+  - production
+---
+
 # Cortex Environment Separation
 
 ## Overview

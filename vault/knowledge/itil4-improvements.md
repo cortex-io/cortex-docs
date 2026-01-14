@@ -1,3 +1,14 @@
+---
+title: "ITIL4 Improvements for Cortex"
+type: knowledge
+created: "2025-12-30"
+tags:
+  - itil4
+  - best-practices
+  - framework
+  - improvement
+---
+
 # ITIL 4 Analysis: Improving Cortex with Industry Best Practices
 
 **Document Version:** 1.0

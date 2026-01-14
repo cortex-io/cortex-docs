@@ -1,3 +1,14 @@
+---
+title: "Asset Catalog"
+type: operations
+created: "2025-11-27"
+tags:
+  - assets
+  - catalog
+  - documentation
+  - reference
+---
+
 # Asset Catalog
 
 **Version:** 1.0

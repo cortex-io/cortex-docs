@@ -1,3 +1,16 @@
+---
+title: "Security Compliance Checklist"
+type: operations
+created: "2025-11-27"
+tags:
+  - security
+  - compliance
+  - checklist
+  - soc2
+  - gdpr
+  - iso27001
+---
+
 # Security Compliance Checklist
 
 ## Overview

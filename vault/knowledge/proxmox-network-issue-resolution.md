@@ -1,3 +1,15 @@
+---
+title: "Proxmox Network Issue Resolution"
+type: knowledge
+created: "2025-12-25"
+status: blocked
+tags:
+  - proxmox
+  - networking
+  - troubleshooting
+  - mcp-server
+---
+
 # Proxmox MCP Server - Network Connectivity Issue
 
 ## Status: BLOCKED - Awaiting Network Resolution

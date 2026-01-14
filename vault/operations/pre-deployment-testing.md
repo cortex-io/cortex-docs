@@ -1,3 +1,14 @@
+---
+title: "Pre-Deployment Testing"
+type: operations
+created: "2025-11-27"
+tags:
+  - testing
+  - deployment
+  - validation
+  - framework
+---
+
 # Pre-Deployment Testing Framework
 
 Comprehensive testing framework to ensure safe deployments of Cortex masters and workers to production.
