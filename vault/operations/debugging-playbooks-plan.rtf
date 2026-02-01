@@ -1,0 +1,290 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 AndaleMono;}
+{\colortbl;\red255\green255\blue255;\red0\green255\blue0;\red0\green0\blue0;\red47\green255\blue18;
+\red162\green168\blue247;}
+{\*\expandedcolortbl;;\csgenericrgb\c0\c100000\c0;\csgray\c0\c90000;\cssrgb\c15686\c99608\c7843;
+\cssrgb\c69412\c72549\c97647;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \ul \ulc2 \CocoaLigature0 Implementation Plan: Debugging Playbooks System\cf4 \ulnone \
+\
+ \cf2 Overview\cf4 \
+\
+ Create a systematic debugging playbook structure in cortex-gitops that captures source-grounded troubleshooting procedures, following the context-first\
+ debugging model from GitHub Copilot Spaces article.\
+\
+ \cf2 Background Context\cf4 \
+\
+ \cf2 Current State\cf4 \
+\
+ - 19 existing markdown docs focused on status/architecture (no formal debugging playbooks)\
+ - Excellent procedural documentation exists (\cf5 vulnerability-remediation-workflow.md\cf4 , \cf5 OPERATIONAL-PRINCIPLES.md\cf4 )\
+ - Git history shows recurring issues: resource limits, image pulls, configuration errors, ArgoCD sync\
+ - Documentation pattern established: tables, ASCII diagrams, step-by-step workflows\
+\
+ \cf2 Goal\cf4 \
+\
+ Create reusable debugging playbooks that:\
+ 1. Document source-grounded investigation steps (cite file paths, line numbers, kubectl commands)\
+ 2. Prevent re-discovering same patterns in future debugging sessions\
+ 3. Align with existing OPERATIONAL-PRINCIPLES.md ("STOP. ANALYZE. DESIGN.")\
+ 4. Follow existing documentation patterns\
+\
+ \cf2 Implementation Steps\cf4 \
+\
+ \cf2 Step 1: Create Playbook Directory Structure\cf4 \
+\
+ Create organized subdirectories in \cf5 docs/\cf4 :\
+\
+ docs/\
+ \uc0\u9500 \u9472 \u9472  playbooks/\
+ \uc0\u9474    \u9500 \u9472 \u9472  INDEX.md                    # Master index of all playbooks\
+ \uc0\u9474    \u9500 \u9472 \u9472  pod-debugging/\
+ \uc0\u9474    \u9474    \u9500 \u9472 \u9472  image-pull-failures.md\
+ \uc0\u9474    \u9474    \u9492 \u9472 \u9472  crashloop-backoff.md\
+ \uc0\u9474    \u9500 \u9472 \u9472  network/\
+ \uc0\u9474    \u9474    \u9500 \u9472 \u9472  metallb-l2-vpn-issues.md\
+ \uc0\u9474    \u9474    \u9492 \u9472 \u9472  service-connectivity.md\
+ \uc0\u9474    \u9500 \u9472 \u9472  resources/\
+ \uc0\u9474    \u9474    \u9500 \u9472 \u9472  limitrange-violations.md\
+ \uc0\u9474    \u9474    \u9492 \u9472 \u9472  oom-killed.md\
+ \uc0\u9474    \u9492 \u9472 \u9472  gitops/\
+ \uc0\u9474        \u9500 \u9472 \u9472  argocd-sync-failures.md\
+ \uc0\u9474        \u9492 \u9472 \u9472  kaniko-build-timeouts.md\
+\
+ \cf2 Rationale\cf4 : Categorized structure makes playbooks discoverable and maintainable.\
+\
+ \cf2 Step 2: Create Playbook Template\cf4 \
+\
+ Standard template following existing doc patterns:\
+\
+ # Playbook: [Issue Name]\
+ \cf2 **Category**\cf4 : [Pod/Network/Resources/GitOps]\
+ \cf2 **Last Updated**\cf4 : YYYY-MM-DD\
+ \cf2 **Severity**\cf4 : [Low/Medium/High/Critical]\
+\
+ ---\
+\
+ ## Symptoms\
+ - Bullet list of observable symptoms\
+ - Pod status indicators\
+ - Error messages in logs/events\
+\
+ ## Quick Diagnosis\
+ ```bash\
+ # Commands to run for initial assessment (with expected output)\
+ kubectl get pods -n <namespace>\
+ kubectl describe pod <pod-name> -n <namespace> | grep -A 10 "Events:"\
+\
+ \cf2 Investigation Steps\cf4 \
+\
+ \cf2 1. [First Check]\cf4 \
+\
+ \cf2 File to Check\cf4 : \cf5 path/to/file.yaml:line\cf4 \
+ \cf2 Command\cf4 : \cf5 kubectl ...\cf4 \
+ \cf2 What to Look For\cf4 : Expected vs actual state\
+\
+ \cf2 2. [Second Check]\cf4 \
+\
+ ...\
+\
+ \cf2 Common Root Causes\cf4 \
+\
+ \cf2 Cause A: [Description]\cf4 \
+\
+ \cf2 Indicators\cf4 : How to confirm this is the cause\
+ \cf2 Solution\cf4 : Step-by-step fix\
+ \cf2 Files to Modify\cf4 : \cf5 path/to/file.yaml\cf4 \
+ \cf2 Verification\cf4 : How to confirm fix worked\
+\
+ \cf2 Cause B: [Description]\cf4 \
+\
+ ...\
+\
+ \cf2 Prevention\cf4 \
+\
+ - Configuration best practices\
+ - Monitoring recommendations\
+ - Pre-flight checks\
+\
+ \cf2 Related Playbooks\cf4 \
+\
+ - Link to related debugging guides\
+ - Link to relevant system documentation\
+\
+ \cf2 Real Examples\cf4 \
+\
+ - Commit hash: Brief description of when this occurred\
+ - Session reference: Link to debugging transcript if available\
+\
+ **Rationale**: Template ensures consistency, completeness, and source citations.\
+\
+ ### Step 3: Create Initial Playbooks (Based on Recent Issues)\
+\
+ Create 5 high-value playbooks from recent debugging sessions:\
+\
+ #### 3a. `playbooks/pod-debugging/image-pull-failures.md`\
+ **Content from today's chat debugging**:\
+ - Symptoms: ImagePullBackOff, ErrImagePull\
+ - Investigation: Check registry connectivity, Kaniko build status\
+ - Root causes: Registry timeout, missing image, TLS handshake failure\
+ - Solutions: Verify build job, check registry service, test node connectivity\
+ - Real example: Commit a6b1a31 (chat backend image issue)\
+\
+ #### 3b. `playbooks/network/metallb-l2-vpn-issues.md`\
+ **Content from today's MetalLB debugging**:\
+ - Symptoms: LoadBalancer IP not reachable over VPN\
+ - Investigation: Ping test, check MetalLB speakers, verify L2Advertisement\
+ - Root cause: L2 ARP doesn't cross routed VPN (Layer 3)\
+ - Solution: Switch to NodePort for VPN access\
+ - Real example: Commit c07013e (NodePort migration)\
+\
+ #### 3c. `playbooks/resources/limitrange-violations.md`\
+ **Content from Qdrant deployment**:\
+ - Symptoms: "forbidden: memory/cpu max limit to request ratio per Container"\
+ - Investigation: Check namespace LimitRange, compare pod resource specs\
+ - Root cause: Resource request:limit ratio exceeds policy (4:1 CPU, 2:1 memory)\
+ - Solution: Adjust resource requests to comply with ratios\
+ - Real example: Qdrant deployment fix (from session summary)\
+\
+ #### 3d. `playbooks/gitops/argocd-sync-failures.md`\
+ **Content from today's ArgoCD issues**:\
+ - Symptoms: Application status "Unknown", sync errors, "ComparisonError"\
+ - Investigation: Check application status, review sync logs, verify repo connectivity\
+ - Root causes: Redis timeout, repo auth failure, manifest parsing errors\
+ - Solutions: Manual kubectl apply, force refresh, fix YAML syntax\
+ - Real example: cortex-chat ArgoCD sync timeout\
+\
+ #### 3e. `playbooks/gitops/kaniko-build-timeouts.md`\
+ **Content from MoE router builds**:\
+ - Symptoms: "dial tcp 10.43.170.72:5000: i/o timeout"\
+ - Investigation: Test registry connectivity, check build pod logs, verify network policies\
+ - Root causes: Registry service down, network policy blocking, node network issues\
+ - Solutions: Restart registry, verify service endpoints, check NetworkPolicy rules\
+ - Real example: MoE router build attempts\
+\
+ ### Step 4: Create Master Index\
+\
+ `docs/playbooks/INDEX.md`:\
+ - Table of all playbooks categorized by type\
+ - Quick reference matrix: Symptom \uc0\u8594  Playbook\
+ - Links to related operational docs (CLAUDE.md, OPERATIONAL-PRINCIPLES.md)\
+ - Usage guidelines for when to consult playbooks\
+\
+ ### Step 5: Integrate with Existing Documentation\
+\
+ Update existing docs to reference playbooks:\
+\
+ **CLAUDE.md additions**:\
+ ```markdown\
+ ## Troubleshooting\
+ When encountering issues, consult debugging playbooks: `docs/playbooks/INDEX.md`\
+ Common workflows should follow: STOP \uc0\u8594  Consult Playbook \u8594  ANALYZE \u8594  DESIGN \u8594  IMPLEMENT\
+\
+ \cf2 OPERATIONAL-PRINCIPLES.md additions\cf4 :\
+ ### When to STOP and Consult Playbooks\
+ - Pod in CrashLoopBackOff \uc0\u8594  See `docs/playbooks/pod-debugging/crashloop-backoff.md`\
+ - ArgoCD sync failing \uc0\u8594  See `docs/playbooks/gitops/argocd-sync-failures.md`\
+ - Service not accessible \uc0\u8594  See `docs/playbooks/network/service-connectivity.md`\
+\
+ \cf2 CORTEX-SYSTEM-STATUS.md additions\cf4 :\
+ Add "Debugging Resources" section linking to relevant playbooks for current issues.\
+\
+ \cf2 Critical Files to Create/Modify\cf4 \
+\
+ \cf2 New Files (10 total)\cf4 \
+\
+ 1. \cf5 docs/playbooks/INDEX.md\cf4  - Master index\
+ 2. \cf5 docs/playbooks/TEMPLATE.md\cf4  - Playbook template\
+ 3. \cf5 docs/playbooks/pod-debugging/image-pull-failures.md\cf4 \
+ 4. \cf5 docs/playbooks/pod-debugging/crashloop-backoff.md\cf4 \
+ 5. \cf5 docs/playbooks/network/metallb-l2-vpn-issues.md\cf4 \
+ 6. \cf5 docs/playbooks/network/service-connectivity.md\cf4 \
+ 7. \cf5 docs/playbooks/resources/limitrange-violations.md\cf4 \
+ 8. \cf5 docs/playbooks/resources/oom-killed.md\cf4 \
+ 9. \cf5 docs/playbooks/gitops/argocd-sync-failures.md\cf4 \
+ 10. \cf5 docs/playbooks/gitops/kaniko-build-timeouts.md\cf4 \
+\
+ \cf2 Modified Files (3 total)\cf4 \
+\
+ 1. \cf5 CLAUDE.md\cf4  - Add troubleshooting workflow section\
+ 2. \cf5 docs/OPERATIONAL-PRINCIPLES.md\cf4  - Add playbook references\
+ 3. \cf5 docs/CORTEX-SYSTEM-STATUS.md\cf4  - Add debugging resources section\
+\
+ \cf2 Verification Steps\cf4 \
+\
+ \cf2 1. Documentation Quality Check\cf4 \
+\
+ - All playbooks follow template structure\
+ - Source citations include file paths with line numbers\
+ - Commands include expected output examples\
+ - Real examples cite commit hashes\
+ - Cross-references work (no broken links)\
+\
+ \cf2 2. Usability Test\cf4 \
+\
+ Using today's chat debugging as test case:\
+ - INDEX.md symptom matrix points to correct playbooks\
+ - image-pull-failures.md documents registry timeout issue\
+ - metallb-l2-vpn-issues.md explains NodePort solution\
+ - Playbooks provide actionable next steps\
+\
+ \cf2 3. Integration Check\cf4 \
+\
+ - CLAUDE.md references playbook workflow\
+ - OPERATIONAL-PRINCIPLES.md links relevant playbooks\
+ - CORTEX-SYSTEM-STATUS.md points to debugging resources\
+ - Git history validates real examples cited\
+\
+ \cf2 4. GitOps Workflow Test\cf4 \
+\
+ - Commit all playbooks to cortex-gitops\
+ - Push to GitHub\
+ - Verify files render correctly in GitHub UI\
+ - ArgoCD ignores docs/ directory (no sync attempts)\
+\
+ \cf2 Success Criteria\cf4 \
+\
+ 1. \cf2 Source-Grounded\cf4 : All playbooks cite specific files, line numbers, kubectl commands with actual output\
+ 2. \cf2 Actionable\cf4 : Each playbook provides clear investigation \uc0\u8594  diagnosis \u8594  solution workflow\
+ 3. \cf2 Discoverable\cf4 : INDEX.md makes it easy to find relevant playbook from symptoms\
+ 4. \cf2 Consistent\cf4 : All playbooks follow template, match existing doc style\
+ 5. \cf2 Integrated\cf4 : Operational docs reference playbooks in troubleshooting workflows\
+ 6. \cf2 Validated\cf4 : Real debugging examples prove playbook accuracy\
+\
+ \cf2 Post-Implementation: Return to Chat Debugging\cf4 \
+\
+ After playbooks are implemented, return to fixing chat issues:\
+\
+ \cf2 Remaining Chat Issues\cf4 \
+\
+ 1. \cf2 Backend image missing\cf4 : Build cortex-chat-backend-simple image\
+   - Consult: \cf5 docs/playbooks/pod-debugging/image-pull-failures.md\cf4 \
+   - Consult: \cf5 docs/playbooks/gitops/kaniko-build-timeouts.md\cf4 \
+ 2. \cf2 Registry connectivity\cf4 : Fix internal registry or use alternative\
+   - Root cause: Registry timeouts from Kaniko builds\
+   - Options: Fix registry networking, use Docker Hub/GHCR, use different build method\
+ 3. \cf2 Nginx proxy config\cf4 : Deployment blocked by Docker Hub TLS handshake failure\
+   - Old pod still running with wrong config\
+   - Need new deployment with nginx.conf mount\
+\
+ \cf2 Approach\cf4 \
+\
+ Follow playbook-guided workflow:\
+ 1. Consult image-pull-failures.md for systematic investigation\
+ 2. Document findings in playbook (add new root cause if discovered)\
+ 3. Apply solution from playbook or design new one\
+ 4. Verify fix, update playbook with real example\
+\
+ \cf2 Timeline Estimate\cf4 \
+\
+ - Step 1 (Directory structure): 2 minutes\
+ - Step 2 (Template): 5 minutes\
+ - Step 3 (5 initial playbooks): 20 minutes (4 min each)\
+ - Step 4 (Index): 5 minutes\
+ - Step 5 (Integration): 8 minutes (3 files)\
+ - Verification: 10 minutes\
+ - \cf2 Total\cf4 : ~50 minutes\
+\
+}
