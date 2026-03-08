@@ -1,56 +1,38 @@
-# Cortex Documentation
+<div align="center">
 
-The living knowledge base for Cortex - self-managing, self-curating, and human-friendly.
+# Cortex Docs
 
-## Philosophy
+**The knowledge base for Cortex — architecture decisions, runbooks, and component documentation.**
 
-This repository serves as the **single source of truth** for all Cortex documentation. It's designed to be:
+> ⚠️ **This project is archived.** No longer under active development.
 
-- **Authored** in [Obsidian](https://obsidian.md) for a rich, graph-based writing experience
-- **Stored** in GitHub for version control, collaboration, and GitOps alignment
-- **Published** via static site generation for public-facing documentation
+</div>
+
+---
+
+## What's Here
+
+An Obsidian vault containing all Cortex documentation: architecture decision records, per-service docs, operational runbooks, and extracted insights.
 
 ## Structure
 
 ```
 vault/
-├── _index.md          # Map of Content - the living table of contents
-├── _inbox/            # Unsorted intake - Cortex and humans dump here
+├── _index.md          # Map of content
 ├── architecture/      # System design, ADRs, diagrams
 ├── components/        # Per-service documentation
 ├── operations/        # Runbooks, SOPs, incident response
 ├── knowledge/         # Extracted insights and learnings
-├── projects/          # Bounded efforts with defined scope
-└── meta/              # Documentation about documentation
+├── projects/          # Bounded project scopes
+└── meta/              # Docs about docs
 ```
 
-## Getting Started
+## Usage
 
-### For Humans
-
-1. Clone this repo
-2. Open the `vault/` folder in Obsidian
-3. Start writing - use templates from `templates/` for consistency
-
-### For Cortex
-
-1. Drop documents into `vault/_inbox/`
-2. Follow templates in `templates/` for structured output
-3. Read curation rules in `vault/meta/` before any automated actions
-
-## Curation Workflow
-
-Documentation curation is (will be) managed by Cortex itself. See `vault/meta/curation-workflow.md` for the design and rules.
-
-## Publishing
-
-> **Future State**: GitHub Actions will build and deploy a static site on push.
-
-Options under consideration:
-- [MkDocs Material](https://squidfunk.github.io/mkdocs-material/)
-- [Docusaurus](https://docusaurus.io/)
-- [Quartz](https://quartz.jzhao.xyz/) (Obsidian-native)
+Open the `vault/` directory in [Obsidian](https://obsidian.md) for the full graph-linked experience, or browse files directly on GitHub.
 
 ---
 
-*This documentation is managed by Cortex. For questions, talk to the machine.*
+<div align="center">
+<sub>Built with Claude. No longer maintained.</sub>
+</div>
