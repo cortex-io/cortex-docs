@@ -1,38 +1,32 @@
-<div align="center">
+<img src="docs/banner.svg" width="100%" alt="cortex-docs: the Obsidian knowledge base: architecture decisions, runbooks and insights. Part of the archived Cortex project.">
 
-# Cortex Docs
+> [!NOTE]
+> **Archived.** This repo is part of [Cortex](https://github.com/cortex-io), which is no longer under active development. It is kept as a working record: explore, fork and borrow freely, but no fixes or features are planned.
 
-**The knowledge base for Cortex — architecture decisions, runbooks, and component documentation.**
+<p align="center"><sub><a href="https://github.com/cortex-io"><b>Cortex</b></a> &nbsp;·&nbsp; <a href="https://github.com/cortex-io/cortex">cortex</a> · <a href="https://github.com/cortex-io/cortex-platform">cortex-platform</a> · <a href="https://github.com/cortex-io/cortex-gitops">cortex-gitops</a> · <a href="https://github.com/cortex-io/cortex-k3s">cortex-k3s</a> · <b>cortex-docs</b> · <a href="https://github.com/cortex-io/cortex-construction-hq">cortex-construction-hq</a> · <a href="https://github.com/cortex-io/infrastructure-docs">infrastructure-docs</a></sub></p>
 
-> ⚠️ **This project is archived.** No longer under active development.
+## What's here
 
-</div>
+An Obsidian vault holding the Cortex knowledge base: architecture decision records, operational runbooks, extracted insights and project scopes. Open `vault/` in [Obsidian](https://obsidian.md) for the linked graph, or browse the Markdown right here.
 
----
+<img src="docs/architecture.svg" width="100%" alt="Vault map: _index links operations (43 notes), knowledge (26), architecture (22), projects (14), meta and _inbox">
 
-## What's Here
-
-An Obsidian vault containing all Cortex documentation: architecture decision records, per-service docs, operational runbooks, and extracted insights.
-
-## Structure
+## Layout
 
 ```
 vault/
-├── _index.md          # Map of content
-├── architecture/      # System design, ADRs, diagrams
-├── components/        # Per-service documentation
-├── operations/        # Runbooks, SOPs, incident response
-├── knowledge/         # Extracted insights and learnings
-├── projects/          # Bounded project scopes
-└── meta/              # Docs about docs
+├── _index.md        # map of content: start here
+├── operations/      # 43 notes: runbooks, SOPs, incident response
+├── knowledge/       # 26 notes: extracted insights and learnings
+├── architecture/    # 22 notes: system design, ADRs, diagrams
+├── projects/        # 14 notes: bounded project scopes
+├── meta/            # docs about the docs
+└── _inbox/          # unsorted capture
+templates/           # component, decision, knowledge-extract, runbook
 ```
 
-## Usage
-
-Open the `vault/` directory in [Obsidian](https://obsidian.md) for the full graph-linked experience, or browse files directly on GitHub.
+The vault was also set up to publish as a [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) site (`mkdocs.yml`).
 
 ---
 
-<div align="center">
-<sub>Built with Claude. No longer maintained.</sub>
-</div>
+<p align="center"><sub>Part of the <a href="https://github.com/cortex-io">Cortex archive</a> · built with Claude</sub></p>
